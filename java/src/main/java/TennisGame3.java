@@ -12,6 +12,8 @@ public class TennisGame3 implements TennisGame {
 	}
 
 	public String getScore() {
+		if (isWin())
+			return "Win for " + getLeader();
 		if (p1 == p2) {
 			if (p1 < 3)
 				return scoreToString[p1] + "-All";
@@ -19,9 +21,11 @@ public class TennisGame3 implements TennisGame {
 		}
 		if ((p1 >= 4 || p2 >= 4) && Math.abs(p1 - p2) == 1)
 			return "Advantage " + getLeader();
-		if ((p1 >= 4 || p2 >= 4) && Math.abs(p1 - p2) >= 2)
-			return "Win for " + getLeader();
 		return scoreToString[p1] + "-" + scoreToString[p2];
+	}
+
+	private boolean isWin() {
+		return (p1 >= 4 || p2 >= 4) && Math.abs(p1 - p2) >= 2;
 	}
 
 	private String getLeader() {
