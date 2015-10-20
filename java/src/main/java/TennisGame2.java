@@ -14,15 +14,12 @@ public class TennisGame2 implements TennisGame {
 	}
 
 	public String getScore() {
-		if (isTie()) {
+		if (isTie())
 			return getTieScore();
-		}
-		if (isAdvantage()) {
+		if (isAdvantage())
 			return getAdvantageScore();
-		}
-		if (isWin()) {
+		if (isWin())
 			return getWinScore();
-		}
 		return getNormalScore();
 	}
 
@@ -31,9 +28,8 @@ public class TennisGame2 implements TennisGame {
 	}
 
 	private String getTieScore() {
-		if (P1point < 3) {
+		if (P1point < 3)
 			return scoreToString(P1point) + "-All";
-		}
 		return "Deuce";
 	}
 
