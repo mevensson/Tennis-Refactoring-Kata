@@ -22,15 +22,7 @@ public class TennisGame1 implements TennisGame {
 		String score = "";
 		int tempScore = 0;
 		if (isTied()) {
-			if (m_score1 == 0) {
-				score = "Love-All";
-			} else if (m_score1 == 1) {
-				score = "Fifteen-All";
-			} else if (m_score1 == 2) {
-				score = "Thirty-All";
-			} else {
-				score = "Deuce";
-			}
+			score = getTiedScore();
 		} else if (m_score1 >= 4 || m_score2 >= 4) {
 			int minusResult = m_score1 - m_score2;
 			if (minusResult == 1) {
@@ -66,5 +58,19 @@ public class TennisGame1 implements TennisGame {
 
 	private boolean isTied() {
 		return m_score1 == m_score2;
+	}
+
+	private String getTiedScore() {
+		String score;
+		if (m_score1 == 0) {
+			score = "Love-All";
+		} else if (m_score1 == 1) {
+			score = "Fifteen-All";
+		} else if (m_score1 == 2) {
+			score = "Thirty-All";
+		} else {
+			score = "Deuce";
+		}
+		return score;
 	}
 }
