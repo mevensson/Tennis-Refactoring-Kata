@@ -14,40 +14,38 @@ public class TennisGame2 implements TennisGame {
 	}
 
 	public String getScore() {
-		String score = "";
 		if (P1point == P2point && P1point < 3) {
-			score = scoreToString(P1point);
-			score += "-All";
+			return scoreToString(P1point) + "-All";
 		}
 		if (P1point == P2point && P1point >= 3)
-			score = "Deuce";
+			return "Deuce";
 
 		if (P1point > P2point && P1point < 4) {
 			P1res = scoreToString(P1point);
 			P2res = scoreToString(P2point);
-			score = P1res + "-" + P2res;
+			return P1res + "-" + P2res;
 		}
 		if (P2point > P1point && P2point < 4) {
 			P1res = scoreToString(P1point);
 			P2res = scoreToString(P2point);
-			score = P1res + "-" + P2res;
-		}
-
-		if (P1point > P2point && P2point >= 3) {
-			score = "Advantage player1";
-		}
-
-		if (P2point > P1point && P1point >= 3) {
-			score = "Advantage player2";
+			return P1res + "-" + P2res;
 		}
 
 		if (P1point >= 4 && (P1point - P2point) >= 2) {
-			score = "Win for player1";
+			return "Win for player1";
 		}
 		if (P2point >= 4 && (P2point - P1point) >= 2) {
-			score = "Win for player2";
+			return "Win for player2";
 		}
-		return score;
+
+		if (P1point > P2point && P2point >= 3) {
+			return "Advantage player1";
+		}
+
+		if (P2point > P1point && P1point >= 3) {
+			return "Advantage player2";
+		}
+		return "";
 	}
 
 	private String scoreToString(int score) {
