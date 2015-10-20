@@ -19,9 +19,7 @@ public class TennisGame2 implements TennisGame {
 		}
 
 		if (P1point < 4 && P2point < 4) {
-			P1res = scoreToString(P1point);
-			P2res = scoreToString(P2point);
-			return P1res + "-" + P2res;
+			return getNormalScore();
 		}
 
 		if (isWin()) {
@@ -64,6 +62,10 @@ public class TennisGame2 implements TennisGame {
 		if (P1point > P2point)
 			return "Win for player1";
 		return "Win for player2";
+	}
+
+	private String getNormalScore() {
+		return scoreToString(P1point) + "-" + scoreToString(P2point);
 	}
 
 	private String scoreToString(int score) {
