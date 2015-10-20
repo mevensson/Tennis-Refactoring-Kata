@@ -16,7 +16,7 @@ public class TennisGame3 implements TennisGame {
 			return "Win for " + getLeader();
 		if (isAdvantage())
 			return "Advantage " + getLeader();
-		if (p1 == p2 && p1 >= 3)
+		if (isDeuce())
 			return "Deuce";
 		if (p1 == p2)
 		    return scoreToString[p1] + "-All";
@@ -29,6 +29,10 @@ public class TennisGame3 implements TennisGame {
 
 	private boolean isAdvantage() {
 		return (p1 >= 4 || p2 >= 4) && Math.abs(p1 - p2) == 1;
+	}
+
+	private boolean isDeuce() {
+		return p1 == p2 && p1 >= 3;
 	}
 
 	private String getLeader() {
