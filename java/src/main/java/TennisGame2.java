@@ -31,9 +31,7 @@ public class TennisGame2 implements TennisGame {
 		}
 
 		if (isAdvantage()) {
-			if (P1point > P2point)
-				return "Advantage player1";
-			return "Advantage player2";
+			return getAdvantageScore();
 		}
 
 		return "";
@@ -52,6 +50,12 @@ public class TennisGame2 implements TennisGame {
 
 	private boolean isAdvantage() {
 		return P1point >=3 && P2point >= 3 && Math.abs(P1point - P2point) == 1;
+	}
+
+	private String getAdvantageScore() {
+		if (P1point > P2point)
+			return "Advantage player1";
+		return "Advantage player2";
 	}
 
 	private String scoreToString(int score) {
