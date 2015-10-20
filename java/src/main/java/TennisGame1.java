@@ -31,15 +31,12 @@ public class TennisGame1 implements TennisGame {
 	}
 
 	private String getTiedScore() {
-		if (m_score1 == 0) {
+		if (m_score1 == 0)
 			return "Love-All";
-		} 
-		if (m_score1 == 1) {
+		if (m_score1 == 1)
 			return "Fifteen-All";
-		}
-		if (m_score1 == 2) {
+		if (m_score1 == 2)
 			return "Thirty-All";
-		}
 		return "Deuce";
 	}
 
