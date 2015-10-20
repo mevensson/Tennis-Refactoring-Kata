@@ -30,13 +30,12 @@ public class TennisGame2 implements TennisGame {
 			return "Win for player2";
 		}
 
-		if (P1point > P2point && P2point >= 3) {
-			return "Advantage player1";
-		}
-
-		if (P2point > P1point && P1point >= 3) {
+		if (P1point >=3 && P2point >= 3 && Math.abs(P1point - P2point) == 1) {
+			if (P1point > P2point)
+				return "Advantage player1";
 			return "Advantage player2";
 		}
+
 		return "";
 	}
 
