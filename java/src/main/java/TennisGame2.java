@@ -20,12 +20,7 @@ public class TennisGame2 implements TennisGame {
 		if (P1point == P2point && P1point >= 3)
 			return "Deuce";
 
-		if (P1point > P2point && P1point < 4) {
-			P1res = scoreToString(P1point);
-			P2res = scoreToString(P2point);
-			return P1res + "-" + P2res;
-		}
-		if (P2point > P1point && P2point < 4) {
+		if (P1point < 4 && P2point < 4) {
 			P1res = scoreToString(P1point);
 			P2res = scoreToString(P2point);
 			return P1res + "-" + P2res;
