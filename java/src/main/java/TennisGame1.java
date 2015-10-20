@@ -46,15 +46,12 @@ public class TennisGame1 implements TennisGame {
 
 	private String getAdvantageOrWinScore() {
 		int minusResult = m_score1 - m_score2;
-		if (minusResult == 1) {
+		if (minusResult == 1)
 			return "Advantage player1";
-		}
-		if (minusResult == -1) {
+		if (minusResult == -1)
 			return "Advantage player2";
-		}
-		if (minusResult >= 2) {
+		if (minusResult >= 2)
 			return "Win for player1";
-		}
 		return "Win for player2";
 	}
 
