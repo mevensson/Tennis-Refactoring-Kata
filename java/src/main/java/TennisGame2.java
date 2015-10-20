@@ -24,7 +24,7 @@ public class TennisGame2 implements TennisGame {
 			return P1res + "-" + P2res;
 		}
 
-		if ((P1point >= 4 || P2point >= 4) && Math.abs(P1point - P2point) >= 2) {
+		if (isWin()) {
 			if (P1point > P2point)
 				return "Win for player1";
 			return "Win for player2";
@@ -56,6 +56,10 @@ public class TennisGame2 implements TennisGame {
 		if (P1point > P2point)
 			return "Advantage player1";
 		return "Advantage player2";
+	}
+
+	private boolean isWin() {
+		return (P1point >= 4 || P2point >= 4) && Math.abs(P1point - P2point) >= 2;
 	}
 
 	private String scoreToString(int score) {
