@@ -14,7 +14,7 @@ public class TennisGame2 implements TennisGame {
 	}
 
 	public String getScore() {
-		if (P1point == P2point) {
+		if (isTie()) {
 			if (P1point < 3) {
 				return scoreToString(P1point) + "-All";
 			}
@@ -42,6 +42,10 @@ public class TennisGame2 implements TennisGame {
 			return "Advantage player2";
 		}
 		return "";
+	}
+
+	private boolean isTie() {
+		return P1point == P2point;
 	}
 
 	private String scoreToString(int score) {
