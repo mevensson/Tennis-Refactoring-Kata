@@ -23,7 +23,7 @@ public class TennisGame1 implements TennisGame {
 		int tempScore = 0;
 		if (isTied()) {
 			score = getTiedScore();
-		} else if (m_score1 >= 4 || m_score2 >= 4) {
+		} else if (isAdvantageOrWin()) {
 			int minusResult = m_score1 - m_score2;
 			if (minusResult == 1) {
 				score = "Advantage player1";
@@ -72,5 +72,9 @@ public class TennisGame1 implements TennisGame {
 			score = "Deuce";
 		}
 		return score;
+	}
+
+	private boolean isAdvantageOrWin() {
+		return m_score1 >= 4 || m_score2 >= 4;
 	}
 }
