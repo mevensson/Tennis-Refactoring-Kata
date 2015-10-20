@@ -20,29 +20,12 @@ public class TennisGame1 implements TennisGame {
 
 	public String getScore() {
 		String score = "";
-		int tempScore = 0;
 		if (isTied()) {
 			score = getTiedScore();
 		} else if (isAdvantageOrWin()) {
 			score = getAdvantageOrWinScore();
 		} else {
-			for (int i = 1; i < 3; i++) {
-				if (i == 1) {
-					tempScore = m_score1;
-				} else {
-					score += "-";
-					tempScore = m_score2;
-				}
-				if (tempScore == 0) {
-					score += "Love";
-				} else if (tempScore == 1) {
-					score += "Fifteen";
-				} else if (tempScore == 2) {
-					score += "Thirty";
-				} else if (tempScore == 3) {
-					score += "Forty";
-				}
-			}
+			score = getOtherScore();
 		}
 		return score;
 	}
@@ -80,6 +63,29 @@ public class TennisGame1 implements TennisGame {
 			score = "Win for player1";
 		} else {
 			score = "Win for player2";
+		}
+		return score;
+	}
+
+	private String getOtherScore() {
+		String score = "";
+		int tempScore = 0;
+		for (int i = 1; i < 3; i++) {
+			if (i == 1) {
+				tempScore = m_score1;
+			} else {
+				score += "-";
+				tempScore = m_score2;
+			}
+			if (tempScore == 0) {
+				score += "Love";
+			} else if (tempScore == 1) {
+				score += "Fifteen";
+			} else if (tempScore == 2) {
+				score += "Thirty";
+			} else if (tempScore == 3) {
+				score += "Forty";
+			}
 		}
 		return score;
 	}
