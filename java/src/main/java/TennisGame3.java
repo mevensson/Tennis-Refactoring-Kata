@@ -17,12 +17,11 @@ public class TennisGame3 implements TennisGame {
 				return scoreToString[p1] + "-All";
 			return "Deuce";
 		}
-		if (p1 < 4 && p2 < 4 && !(p1 + p2 == 6)) {
-			return scoreToString[p1] + "-" + scoreToString[p2];
-		} else {
+		if (p1 >= 4 || p2 >= 4 || p1 + p2 == 6) {
 			String leader = p1 > p2 ? p1N : p2N;
 			return Math.abs(p1 - p2) == 1 ? "Advantage " + leader : "Win for " + leader;
 		}
+		return scoreToString[p1] + "-" + scoreToString[p2];
 	}
 	
 	public void wonPoint(String playerName) {
