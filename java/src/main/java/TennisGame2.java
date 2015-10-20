@@ -25,9 +25,7 @@ public class TennisGame2 implements TennisGame {
 		}
 
 		if (isWin()) {
-			if (P1point > P2point)
-				return "Win for player1";
-			return "Win for player2";
+			return getWinScore();
 		}
 
 		if (isAdvantage()) {
@@ -60,6 +58,12 @@ public class TennisGame2 implements TennisGame {
 
 	private boolean isWin() {
 		return (P1point >= 4 || P2point >= 4) && Math.abs(P1point - P2point) >= 2;
+	}
+
+	private String getWinScore() {
+		if (P1point > P2point)
+			return "Win for player1";
+		return "Win for player2";
 	}
 
 	private String scoreToString(int score) {
