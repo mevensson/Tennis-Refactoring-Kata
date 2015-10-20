@@ -14,11 +14,12 @@ public class TennisGame2 implements TennisGame {
 	}
 
 	public String getScore() {
-		if (P1point == P2point && P1point < 3) {
-			return scoreToString(P1point) + "-All";
-		}
-		if (P1point == P2point && P1point >= 3)
+		if (P1point == P2point) {
+			if (P1point < 3) {
+				return scoreToString(P1point) + "-All";
+			}
 			return "Deuce";
+		}
 
 		if (P1point < 4 && P2point < 4) {
 			P1res = scoreToString(P1point);
