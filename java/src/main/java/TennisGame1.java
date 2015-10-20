@@ -65,16 +65,21 @@ public class TennisGame1 implements TennisGame {
 				score += "-";
 				tempScore = m_score2;
 			}
-			if (tempScore == 0) {
-				score += "Love";
-			} else if (tempScore == 1) {
-				score += "Fifteen";
-			} else if (tempScore == 2) {
-				score += "Thirty";
-			} else if (tempScore == 3) {
-				score += "Forty";
-			}
+			score += scoreToString(tempScore);
 		}
 		return score;
+	}
+	
+	private String scoreToString(int score) {
+		assert(score <= 3);
+		if (score == 0) {
+			return "Love";
+		} else if (score == 1) {
+			return "Fifteen";
+		} else if (score == 2) {
+			return "Thirty";
+		} else {
+			return "Forty";
+		}
 	}
 }
