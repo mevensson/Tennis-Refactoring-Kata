@@ -21,11 +21,11 @@ public class TennisGame1 implements TennisGame {
 	public String getScore() {
 		if (isTied()) {
 			return getTiedScore();
-		} else if (isAdvantageOrWin()) {
+		} 
+		if (isAdvantageOrWin()) {
 			return getAdvantageOrWinScore();
-		} else {
-			return getOtherScore();
 		}
+		return getOtherScore();
 	}
 
 	private boolean isTied() {
