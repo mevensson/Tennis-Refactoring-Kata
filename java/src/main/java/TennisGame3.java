@@ -1,5 +1,6 @@
 
 public class TennisGame3 implements TennisGame {
+	private static String[] scoreToString = new String[] { "Love", "Fifteen", "Thirty", "Forty" };
 	private int p2;
 	private int p1;
 	private String p1N;
@@ -12,7 +13,6 @@ public class TennisGame3 implements TennisGame {
 
 	public String getScore() {
 		if (p1 < 4 && p2 < 4 && !(p1 + p2 == 6)) {
-			String[] scoreToString = new String[] { "Love", "Fifteen", "Thirty", "Forty" };
 			String s = scoreToString[p1];
 			return (p1 == p2) ? s + "-All" : s + "-" + scoreToString[p2];
 		} else {
@@ -22,7 +22,7 @@ public class TennisGame3 implements TennisGame {
 			return Math.abs(p1 - p2) == 1 ? "Advantage " + leader : "Win for " + leader;
 		}
 	}
-
+	
 	public void wonPoint(String playerName) {
 		if (playerName == "player1")
 			this.p1 += 1;
