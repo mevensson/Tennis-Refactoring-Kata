@@ -19,12 +19,10 @@ public class TennisGame1 implements TennisGame {
 	}
 
 	public String getScore() {
-		if (isTied()) {
+		if (isTied())
 			return getTiedScore();
-		} 
-		if (isAdvantageOrWin()) {
+		if (isAdvantageOrWin())
 			return getAdvantageOrWinScore();
-		}
 		return getOtherScore();
 	}
 
