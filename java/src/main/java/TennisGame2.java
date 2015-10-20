@@ -17,20 +17,13 @@ public class TennisGame2 implements TennisGame {
 		if (isTie()) {
 			return getTieScore();
 		}
-
-		if (P1point < 4 && P2point < 4) {
-			return getNormalScore();
-		}
-
-		if (isWin()) {
-			return getWinScore();
-		}
-
 		if (isAdvantage()) {
 			return getAdvantageScore();
 		}
-
-		return "";
+		if (isWin()) {
+			return getWinScore();
+		}
+		return getNormalScore();
 	}
 
 	private boolean isTie() {
