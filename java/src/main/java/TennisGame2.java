@@ -15,7 +15,7 @@ public class TennisGame2 implements TennisGame {
 
 	public String getScore() {
 		String score = "";
-		if (P1point == P2point && P1point < 4) {
+		if (P1point == P2point && P1point < 3) {
 			score = scoreToString(P1point);
 			score += "-All";
 		}
