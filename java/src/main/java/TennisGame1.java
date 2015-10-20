@@ -21,7 +21,7 @@ public class TennisGame1 implements TennisGame {
 	public String getScore() {
 		String score = "";
 		int tempScore = 0;
-		if (m_score1 == m_score2) {
+		if (isTied()) {
 			if (m_score1 == 0) {
 				score = "Love-All";
 			} else if (m_score1 == 1) {
@@ -62,5 +62,9 @@ public class TennisGame1 implements TennisGame {
 			}
 		}
 		return score;
+	}
+
+	private boolean isTied() {
+		return m_score1 == m_score2;
 	}
 }
