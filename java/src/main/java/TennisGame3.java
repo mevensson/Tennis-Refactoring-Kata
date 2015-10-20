@@ -18,12 +18,15 @@ public class TennisGame3 implements TennisGame {
 			return "Deuce";
 		}
 		if (p1 >= 4 || p2 >= 4) {
-			String leader = p1 > p2 ? p1N : p2N;
 			if (Math.abs(p1 - p2) == 1)
-				return "Advantage " + leader;
-			return "Win for " + leader;
+				return "Advantage " + getLeader();
+			return "Win for " + getLeader();
 		}
 		return scoreToString[p1] + "-" + scoreToString[p2];
+	}
+
+	private String getLeader() {
+		return p1 > p2 ? p1N : p2N;
 	}
 	
 	public void wonPoint(String playerName) {
