@@ -16,11 +16,10 @@ public class TennisGame3 implements TennisGame {
 			return "Win for " + getLeader();
 		if (isAdvantage())
 			return "Advantage " + getLeader();
-		if (p1 == p2) {
-			if (p1 >= 3)
-				return "Deuce";
+		if (p1 == p2 && p1 >= 3)
+			return "Deuce";
+		if (p1 == p2)
 		    return scoreToString[p1] + "-All";
-		}
 		return scoreToString[p1] + "-" + scoreToString[p2];
 	}
 
