@@ -19,7 +19,9 @@ public class TennisGame3 implements TennisGame {
 		}
 		if (p1 >= 4 || p2 >= 4) {
 			String leader = p1 > p2 ? p1N : p2N;
-			return Math.abs(p1 - p2) == 1 ? "Advantage " + leader : "Win for " + leader;
+			if (Math.abs(p1 - p2) == 1)
+				return "Advantage " + leader;
+			return "Win for " + leader;
 		}
 		return scoreToString[p1] + "-" + scoreToString[p2];
 	}
