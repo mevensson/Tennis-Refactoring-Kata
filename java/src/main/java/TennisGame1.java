@@ -56,18 +56,7 @@ public class TennisGame1 implements TennisGame {
 	}
 
 	private String getOtherScore() {
-		String score = "";
-		int tempScore = 0;
-		for (int i = 1; i < 3; i++) {
-			if (i == 1) {
-				tempScore = m_score1;
-			} else {
-				score += "-";
-				tempScore = m_score2;
-			}
-			score += scoreToString(tempScore);
-		}
-		return score;
+		return scoreToString(m_score1) + "-" + scoreToString(m_score2);
 	}
 	
 	private String scoreToString(int score) {
